@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'pg'
+gem 'omniauth-foursquare', :git => 'https://github.com/arunagw/omniauth-foursquare.git'
+
 
 
 # Gems used only for assets and not required

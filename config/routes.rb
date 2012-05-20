@@ -1,7 +1,15 @@
 Rewardsquare::Application.routes.draw do
+
+  get   '/login', :to => 'sessions#new', :as => :login
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#failure'
+  match "/signout" => "sessions#destroy", :as => :signout
+
   get "users/new"
   get "static_pages/home"
   get "static_pages/help"
+
+  get '/logout', :to => 'sessions#destroy'
 
   root to: 'static_pages#home'
 
